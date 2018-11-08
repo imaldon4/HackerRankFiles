@@ -1,0 +1,27 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    /*
+     * Complete the timeConversion function below.
+     */
+    static String timeConversion(String s) {
+        String t;
+        int str;
+        if (s.charAt(8) == 'A' || s.charAt(8) == 'a') {
+            str = Integer.parseInt(s.substring(0, 2));
+            if (str == 12) {
+                str = 0;
+            }
+            t = String.format("%02d", str) + s.substring(2, 8);
+        } else {
+            str = Integer.parseInt(s.substring(0, 2));
+            str += 12;
+            t = String.format("%02d", str) + s.substring(2, 8);
+        }
+        return t;
+    }
