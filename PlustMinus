@@ -1,0 +1,29 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the plusMinus function below.
+    static void plusMinus(int[] arr) {
+        double g = 0;
+        double zero = 0;
+        double l = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                g++;
+            } else if (arr[i] == 0) {
+                zero++;
+            } else {
+                l++;
+            }
+        }
+        System.out.printf("%.6f", (g / arr.length));
+        System.out.printf("\n%.6f", (l / arr.length));
+        System.out.printf("\n%.6f", (zero / arr.length));
+    }
