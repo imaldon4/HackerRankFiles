@@ -1,0 +1,23 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the diagonalDifference function below.
+    static int diagonalDifference(int[][] arr) {
+        int sum1 = 0;
+        int sum2 = 0;
+        for (int m = 0, n = 0; m < arr.length; m++, n++) {
+            sum1 += arr[m][n];
+        }
+        for (int m = 0, n = arr.length - 1; m < arr.length; m++, n--) {
+            sum2 += arr[m][n];
+        }
+        return Math.abs(sum1 - sum2);
+
+    }
